@@ -46,7 +46,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <div class="row">
                                         <div class="input-field col s12">
-                                          <input id="password" type="password" class="validate" required>
+                                          <input id="password" name="password" type="password" class="validate" required>
                                           @if ($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
