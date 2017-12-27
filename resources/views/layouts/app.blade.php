@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('materialize/css/materialize.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
      <link href="{{ asset('materialize/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -24,9 +25,12 @@
                 {{--  <li><a href="{{ route('register') }}">Register</a></li>  --}}
             @else
                 <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
+                </li>
+                <li>
+                    <a href="{{ url('/home') }}">Dashboard</a>
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -44,43 +48,41 @@
             
         </ul>
 
-        <nav class="">
-        <div class="nav-wrapper container" role="navigation">
-            <a href="{{ url('/') }}" class="brand-logo">BrandCraft</a>
+        <nav class="red darken-4">
+        <div class="nav-wrapper   container" role="navigation">
+                <a id="logo-container" href="{{ url('/')}}" class="brand-logo white-text">
+                        <img class="" width="140px" height="80px" style="padding-top:10px;" src="{{ asset('images/logo.jpg') }}">
+                      </a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/about')}}">About Us</a></li>
-                <li><a href="{{ url('/contact')}}">Contact Us</a></li>
+                {{--  <li><a href="{{ url('/') }}">Home</a></li>  --}}
+                {{--  <li><a href="{{ url('/about')}}">About Us</a></li>  --}}
+                {{--  <li><a href="{{ url('/contact')}}">Contact Us</a></li>  --}}
                 <!-- Dropdown Trigger -->
                 @guest
                 @else 
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button white-text text-darken-4" href="#!" data-activates="dropdown1"><i class="fa fa-user "></i><i class="fa fa-caret-down right"></i></a></li>
                 @endguest
                 
             </ul>
 
              <ul id="nav-mobile" class="side-nav">
                     {{--  <li><a href="{{ url('/') }}">Home</a></li>  --}}
-                    <li><a href="{{ url('/about')}}">About Us</a></li>
-                    <li><a href="{{ url('/contact')}}">Contact Us</a></li>
+                    {{--  <li><a href="{{ url('/about')}}">About Us</a></li>  --}}
+                    {{--  <li><a href="{{ url('/contact')}}">Contact Us</a></li>  --}}
                     @if (Route::has('login'))
                             @auth
-                               <li><a href="{{ url('/home') }}">Home</a></li> 
+                               <li><a href="{{ url('/home') }}">Dashboard</a></li> 
                             @else
                                 <li><a href="{{ route('login') }}">Login</a></li>
                                 {{--  <li><a href="{{ route('register') }}">Register</a></li>  --}}
                     @endauth
                     @endif
             </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars white-text" aria-hidden="true"></i></a>
         </div>
         </nav>
         
         @yield('content')
-
-
-
-
     </div>
     <!-- Scripts -->
     <script src="{{ asset('materialize/js/jquery-2.1.1.min.js') }}"></script>
