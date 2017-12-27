@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +19,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
-
 
 Route::resource('/home/adverts', 'AdvertsController');
 Route::resource('/home/admins', 'AdminsController');
