@@ -22,5 +22,6 @@ Route::get('/contact','PagesController@contact');
 
 Route::resource('/home/adverts', 'AdvertsController');
 Route::resource('/home/admins', 'AdminsController');
-Route::resource('/home/requests', 'RequestsController');
+Route::resource('/requests', 'RequestsController');
+Route::resource('home/requests', 'ManageRequests');
 

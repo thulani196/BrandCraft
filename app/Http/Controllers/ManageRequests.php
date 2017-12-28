@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ServiceRequest;
+use App\AdminRequests;
 
-class RequestsController extends Controller
+class ManageRequests extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class RequestsController extends Controller
      */
     public function index()
     {
-        return view('requests');
+        $requests = AdminRequests::all();
+        return view('dashboard.requests',['requests'=>$requests]);
     }
 
     /**
@@ -24,7 +25,7 @@ class RequestsController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -35,25 +36,7 @@ class RequestsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'fullname'=>'required',
-            'organization'=>'required',
-            'personal_number'=>'required',
-            'org_number'=>'required',
-            'service'=>'required',
-            'date'=>'required',
-        ]);
-
-        $req = new ServiceRequest;
-        $req->customer_name = $request->input('fullname');
-        $req->organization = $request->input('organization');
-        $req->phone_number = $request->input('personal_number');
-        $req->org_phone = $request->input('org_number');
-        $req->service = $request->input('service');
-        $req->date= $request->input('date');
-        
-        $req->save();
-        return redirect('requests')->with('success','Service request successfully submitted!');
+        //
     }
 
     /**

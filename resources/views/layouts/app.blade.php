@@ -73,7 +73,7 @@
                             @auth
                                <li><a href="{{ url('/home') }}">Dashboard</a></li> 
                             @else
-                                <li><a href="{{ route('login') }}">Login</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
                                 {{--  <li><a href="{{ route('register') }}">Register</a></li>  --}}
                     @endauth
                     @endif
@@ -82,7 +82,9 @@
         </div>
         </nav>
         
+        @include('layouts.messages')
         @yield('content')
+        
     </div>
     <!-- Scripts -->
     <script src="{{ asset('materialize/js/jquery-2.1.1.min.js') }}"></script>
