@@ -13,7 +13,7 @@
 @endif
 
 @if(session('error'))
-    <div class="green darken-4 white-text center-align">
+    <div class="red darken-4 white-text center-align">
         {{ session('error') }}
     </div>
 @endif

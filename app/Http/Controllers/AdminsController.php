@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Users;
 use App\Role;
+use Auth;
 
 class AdminsController extends Controller
 {
@@ -40,7 +41,14 @@ class AdminsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admins');
+        if(Auth::user()->role == 1) {
+            return view('dashboard.admins');
+        } elseif(Auth::user()->role == 2) {
+            return redirect('home')->with('error','You do not have Superuser priviledges');
+        } else {
+            return redirect('/')->with('error','You do not have permission');
+        }
+        
     }
 
     /**
@@ -51,7 +59,14 @@ class AdminsController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('dashboard.add',['roles'=>$roles]);
+        if(Auth::user()->role == 1) {
+            return view('dashboard.add',['roles'=>$roles]);
+        } elseif(Auth::user()->role == 2) {
+            return redirect('home')->with('error','You do not have Superuser priviledges');
+        } else {
+            return redirect('/')->with('error','You do not have permission');
+        }
+        
     }
 
     /**
