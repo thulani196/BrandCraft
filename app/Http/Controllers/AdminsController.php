@@ -66,7 +66,6 @@ class AdminsController extends Controller
         } else {
             return redirect('/')->with('error','You do not have permission');
         }
-        
     }
 
     /**
