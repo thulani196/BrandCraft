@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\RegistersUsers;
+// use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Users;
+use App\Role;
 
 class AdminsController extends Controller
 {
@@ -20,16 +22,17 @@ class AdminsController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|string|email|max:255|unique:users',
+    //         'password' => 'required|string|min:6|confirmed',
+    //     ]);
+        
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +50,8 @@ class AdminsController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all();
+        return view('dashboard.add',['roles'=>$roles]);
     }
 
     /**
@@ -58,7 +62,23 @@ class AdminsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'roles' => 'required',
+        ]);
+            
+        $hash = bcrypt($request->input('password'));
+        $user = new Users;
+        $user->name = $request->input('fullname');
+        $user->role = $request->input('roles');
+        $user->email = $request->input('email');
+        // $user->password = $request->input('password');
+        $user->password = $hash;
+        $user->save();
+        
+        return redirect('dashboard/admins')->with('success','New admin successfully registered!');
     }
 
     /**
