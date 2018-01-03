@@ -24,4 +24,5 @@ Route::resource('/home/adverts', 'AdvertsController');
 Route::resource('/home/admins', 'AdminsController');
 Route::resource('/requests', 'RequestsController');
 Route::resource('home/requests', 'ManageRequests');
+Route::resource('/products', 'AdvertViewController');
 

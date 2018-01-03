@@ -38,6 +38,7 @@
                   <img class="" width="140px" height="80px" style="padding-top:10px;" src="{{ asset('images/logo.jpg') }}">
                 </a>
                 <ul class="right hide-on-med-and-down ">
+                    <li><a class="white-text " href="{{ url('/products') }}">Products</a></li>
                     <li><a class="white-text " href="{{ url('/requests') }}">Request for a service</a></li>
                         {{--  <li><a href="{{ url('/about')}}" class="white-text">About Us</a></li>  --}}
                         {{--  <li><a href="{{ url('/contact')}}" class="white-text">Contact Us</a></li>  --}}
@@ -53,6 +54,7 @@
             
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a class="" href="{{ url('/products') }}">Products</a></li>
                     <li><a href="{{ url('/requests') }}">Request for a service</a></li>
                     {{--  <li><a href="{{ url('/about')}}">About Us</a></li>  --}}
                     {{--  <li><a href="{{ url('/contact')}}">Contact Us</a></li>  --}}
@@ -279,25 +281,20 @@
         {{--  <a id="download-button" class="waves-effect waves-light btn modal-trigger" href="#modal1">How To?</a>  --}}
         </div>
         <br><br>
-
     </div>
     </div>
     <div class="parallax"><img src="{{ asset('images/background1.jpg') }}" alt="Unsplashed background img 1"></div>
 
   </div>
 
-
     {{--  BODY CONTENT CLOSE  --}}
-
-
-
-
-
     <!-- Contact Details Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-          <h4 class="center">How to advertise with us</h4>
-          <p>A bunch of text</p>
+          <h4 class="center" style="font-size:24px; color:rgb(250,10,10)">Contact us!</h4>
+          <p style="text-align:center">Location:16 prospect hill Kapumpe rd, off Yotamu Muleya rd</p>
+          <p style="text-align:center">Call us: <a href="tel:+260979568223" ><i class="fa fa-phone">+260 979 568 223</i></a></p>
+          <p style="text-align:center">Email us: <a href="mailto:brandcraft@gmail.com" ><i class="fa fa-email">Brandcraft@gmail.com</i></a></p>
         </div>
         <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Got It!</a>
