@@ -31,7 +31,11 @@
                         @endif
                         </tbody>
             </table>
-            
+            @if(count($adverts) >0)
+                <div class="col l12 m12 s12">
+                    <div class="text-center">{{$adverts->links()}}</div>
+                </div>
+            @endif
         </section>
     </div>
 </div>

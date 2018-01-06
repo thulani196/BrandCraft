@@ -13,7 +13,8 @@ class AdvertsController extends Controller
      */
     public function index()
     {
-        $adverts = Advert::all();
+        // $adverts = Advert::all();
+        $adverts = Advert::paginate(12);  
         return view('dashboard.adverts',['adverts' => $adverts]);
     }
 
@@ -36,7 +37,7 @@ class AdvertsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'organization' => 'required',
+            'product_name' => 'required',
             'cover_photo' => 'max:1999',
             'details' => 'required',
         ]);
@@ -55,7 +56,7 @@ class AdvertsController extends Controller
 
         $advert = new Advert;
         $advert->image = $fileNameToStore;
-        $advert->organization = $request->input('organization');
+        $advert->title = $request->input('product_name');
         $advert->description = $request->input('details');
 
         $advert->save();

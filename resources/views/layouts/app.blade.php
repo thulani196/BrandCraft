@@ -12,6 +12,7 @@
     {{--  Icons  --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('materialize/css/materialize.min.css') }}" rel="stylesheet">
     <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
      <link href="{{ asset('materialize/css/style.css') }}" rel="stylesheet">

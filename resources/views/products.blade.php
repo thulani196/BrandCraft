@@ -8,7 +8,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <img src="/storage/cover_images/{{$advert->image }}" height="230px" width="100%">
-                                <span class="card-title">Card Title</span>
+                                <span class="card-title white-text darken-5">{{$advert->title}}</span>
                             </div>
                             <div class="card-content">
                                 <p>{{$advert->description}}</p>
@@ -19,6 +19,10 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="col l12 m12 s12">
+                    <div class="pagination"> {{$adverts->links()}} </div>
+                </div>
+                
             @endif
         </div>
     </div>

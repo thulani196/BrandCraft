@@ -7,8 +7,8 @@
             <form method="POST" action="/home/adverts"  enctype="multipart/form-data" class="form">
                 {{ csrf_field() }}
                 <div class="input-field col s6">
-                    <input id="organization" Name="organization" type="text" class="validate">
-                    <label for="last_name">Organization Name</label>
+                    <input id="product_name" Name="product_name" type="text" class="validate">
+                    <label for="product_name">Product Name</label>
                 </div>
 
                 <div class="input-field col s6">
