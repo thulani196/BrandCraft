@@ -20,10 +20,10 @@
                                 <tr>
                                     <td>1</td>
                                     <td><img src="/storage/cover_images/{{$advert->image }}" width="60px" height="25px"></td>
-                                    <td>{{ $advert->organization }}</td>
+                                    <td>{{ $advert->title }}</td>
                                     <td>{{ $advert->description }}</td>
                                     <td class="center-align">
-                                        <a href=""><i class="fa fa-wrench" aria-hidden="true"></i></a>
+                                        <a href="adverts/{{$advert->id}}/edit"><i class="fa fa-wrench" aria-hidden="true"></i></a>
                                         <a href=""><i class="fa fa-trash-o"></i></a>
                                     </td>
                                 </tr>

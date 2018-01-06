@@ -82,8 +82,9 @@ class AdvertsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $advert = Advert::find($id);
+        return view('dashboard/edit_advert',['advert'=>$advert]);
     }
 
     /**
@@ -95,7 +96,32 @@ class AdvertsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'product_name' => 'required',
+            'cover_photo' => 'max:1999',
+            'details' => 'required',
+        ]);
+
+        if($request->hasFile('cover_photo')) {
+
+            $fileWithExt = $request->file('cover_photo')->getClientOriginalName();
+            $fileName = pathinfo($fileWithExt, PATHINFO_FILENAME);
+            $ext = $request->file('cover_photo')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'.'.$ext;
+
+            $path = $request->file('cover_photo')->storeAs('public/cover_images',$fileNameToStore);
+        } else {
+            $fileNameToStore = 'image.jpg';
+        }
+
+        $advert = Advert::find($id);
+        $advert->image = $fileNameToStore;
+        $advert->title = $request->input('product_name');
+        $advert->description = $request->input('details');
+
+        $advert->save();
+
+        return redirect('home/adverts')->with('success','Product successfully edited!');
     }
 
     /**
