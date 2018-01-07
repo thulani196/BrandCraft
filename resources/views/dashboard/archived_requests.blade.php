@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container"><br><br>
-    <h3 class="red-text text-darken-4 center-align">Service Requests</h3>
+    <h3 class="red-text text-darken-4 center-align">Archived Service Requests</h3>
     <div class="row">
         <div class="col l12 m12 s12">
             <section>
@@ -26,16 +26,16 @@
                                 <td>{{ $request->service }}</td>
                                 <td>{{ $request->date }}</td>
                                 <td class="center-align">
-                                    <a href="requests/{{$request->id}}/archive"><i class="fa fa-archive" aria-hidden="true"></i></a>
-                                    <a href="requests/{{$request->id}}/delete"><i class="fa fa-trash-o"></i></a>
+                                    <a href="archived/{{$request->id}}/restore"><i class="fa fa-recycle" aria-hidden="true"></i></a>
+                                    <a href="archived/{{$request->id}}/delete"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                 @else
-                <h3 class="red-text text-darken-4 center-align">There are no Service Request</h3>
-                @endif
+                <h3 class="red-text text-darken-4 center-align">There are no archived requests.</h3>
+                    @endif
             </section>
         </div>
     </div>

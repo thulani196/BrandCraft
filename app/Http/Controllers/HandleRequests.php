@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Requests;
+
 use DB;
+use App\Requests;
 class HandleRequests extends Controller
 {
     public function archiveRequest($id) {
@@ -30,8 +30,13 @@ class HandleRequests extends Controller
             $sql = DB::table('requests')
                     ->whereId($id)
                     ->update(['archived'=>0]);
-            return redirect('home/requests')->with('success','Request Un-archived!');
+            return redirect('home/requests/archived')->with('success','Request Un-archived!');
         }
+    }
+
+    public function archived(){
+        $requests = DB::table('requests')->whereArchived(1)->get();
+        return view('dashboard/archived_requests',['requests'=>$requests]);
     }
 
     

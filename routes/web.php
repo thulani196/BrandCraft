@@ -21,7 +21,10 @@ Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 Route::get('/home/requests/{request}/archive','HandleRequests@archiveRequest');
 Route::get('/home/requests/{request}/delete','HandleRequests@deleteRequest');
-Route::get('/home/requests/{request}/unarchive','HandleRequests@restoreRequest');
+Route::get('/home/requests/archived/{request}/restore','HandleRequests@restoreRequest');
+Route::get('/home/requests/archived/{request}/delete','HandleRequests@deleteRequest');
+Route::get('/home/requests/archived','HandleRequests@archived');
+
 
 Route::resource('/home/adverts', 'AdvertsController');
 Route::resource('/home/admins', 'AdminsController');
