@@ -16,6 +16,7 @@
     <link href="{{ asset('materialize/css/materialize.min.css') }}" rel="stylesheet">
     <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
      <link href="{{ asset('materialize/css/style.css') }}" rel="stylesheet">
+     <script src="{{ asset('materialize/js/jquery-2.1.1.min.js') }}"></script>
 </head>
 <body>
     <div id="app" >
@@ -88,7 +89,7 @@
         
     </div>
     <!-- Scripts -->
-    <script src="{{ asset('materialize/js/jquery-2.1.1.min.js') }}"></script>
+    
     <script src="{{ asset('materialize/js/materialize.min.js') }}"></script>
     <script src="{{ asset('materialize/js/init.js') }}"></script>
 </body>

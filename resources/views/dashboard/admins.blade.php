@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container"><br><br>
     <div class="row">
@@ -13,45 +12,30 @@
                         <th>Actions</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Thulani Tembo</td>
-                            <td>tembothulani96@outlook.com</td>
-                            <td>Superuser</td>
-                            <td class="center-align">
-                                <a href=""><i class="fa fa-edit"></i></a>
-                                <a href=""><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>John Smith</td>
-                            <td>jsmith@outlook.com</td>
-                            <td>admin</td>
-                            <td class="center-align">
-                                <a href=""><i class="fa fa-edit"></i></a>
-                                <a href=""><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                                <td>John Smith</td>
-                                <td>jsmith@outlook.com</td>
-                                <td>user</td>
+                    @if(count($users) > 0)
+                        @foreach($users as $user)
+                           
+                            <tr>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>
+                                    @if($user->role == 1)
+                                        superuser
+                                    @elseif($user->role == 2)
+                                        admin
+                                    @elseif($user->role ==3)
+                                        user
+                                    @endif
+                                </td>
                                 <td class="center-align">
-                                    <a href=""><i class="fa fa-edit"></i></a>
+                                    <a href="admins/{{$user->id}}/edit"><i class="fa fa-edit"></i></a>
                                     <a href=""><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
-
-                            <tr>
-                                    <td>John Smith</td>
-                                    <td>jsmith@outlook.com</td>
-                                    <td>Superuser</td>
-                                    <td class="center-align">
-                                        <a href=""><i class="fa fa-edit"></i></a>
-                                        <a href=""><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
+                            
+                        @endforeach
+                    @endif
+                       
 
                     </tbody>
                 </table>

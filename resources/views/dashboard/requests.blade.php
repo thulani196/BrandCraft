@@ -26,8 +26,8 @@
                                 <td>{{ $request->service }}</td>
                                 <td>{{ $request->date }}</td>
                                 <td class="center-align">
-                                    <a href=""><i class="fa fa-archive" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-trash-o"></i></a>
+                                    <a href="requests/{{$request->id}}/archive"><i class="fa fa-archive" aria-hidden="true"></i></a>
+                                    <a href="requests/{{$request->id}}/delete"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                         @endforeach

@@ -6,14 +6,15 @@
             <section>
                 <div class="row">
                     <h5 class="center-align red-text text-darken-4">Register new admin</h5>
-                    <form class="form" method="POST" action="/home/admins">
+                    <form class="form" method="POST" action="/home/admins/{{$user->id}}">
+                        {{ method_field("PUT") }}
                         {{ csrf_field() }}
                         <div class="col l6 m6 s12 input-field">
-                            <input type="text" name="fullname" class="validate">
+                            <input type="text" name="fullname" value="{{$user->name}}" class="validate">
                             <label for="full_name">Full Name:</label>
                         </div>
                         <div class="col l6 m6 s12 input-field">
-                                <input type="email" name="email" class="validate">
+                                <input type="email" value="{{$user->email}}" name="email" class="validate">
                                 <label for="email" data-error="wrong email format">Email Address:</label>
                         </div>
 
@@ -41,7 +42,7 @@
 
                         <div class="col l12 m12 s12 ">
                             <div class="col l12 m12 s12 center-align">
-                                <input type="submit" class="btn red darken-4 " name="submit" value="Send Request">
+                                <input type="submit" class="btn red darken-4 " name="update" value="Send Request">
                               </div>
                         </div>
 

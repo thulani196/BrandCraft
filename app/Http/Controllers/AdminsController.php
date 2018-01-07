@@ -42,7 +42,12 @@ class AdminsController extends Controller
     public function index()
     {
         if(Auth::user()->role == 1) {
-            return view('dashboard.admins');
+            $users = Users::all();
+            foreach($users as $user) {
+                $roles = Role::whereId($user->role)->get();
+            }
+            
+            return view('dashboard.admins',['users' => $users,'roles'=>$roles]);
         } elseif(Auth::user()->role == 2) {
             return redirect('home')->with('error','You do not have Superuser priviledges');
         } else {
@@ -92,7 +97,7 @@ class AdminsController extends Controller
         $user->password = $hash;
         $user->save();
         
-        return redirect('dashboard/admins')->with('success','New admin successfully registered!');
+        return redirect('home/admins')->with('success','New admin successfully registered!');
     }
 
     /**
@@ -103,7 +108,7 @@ class AdminsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -114,7 +119,16 @@ class AdminsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $roles = Role::all();
+        $user = Users::find($id);
+        if(Auth::user()->role == 1) {
+            return view('dashboard.update',['user'=>$user,'roles'=>$roles]);
+        } elseif(Auth::user()->role == 2) {
+            return redirect('home')->with('error','You do not have Superuser priviledges');
+        } else {
+            return redirect('/')->with('error','You do not have permission');
+        }
+        
     }
 
     /**
@@ -126,7 +140,23 @@ class AdminsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'roles' => 'required',
+        ]);
+            
+        $hash = bcrypt($request->input('password'));
+        $user = Users::find($id);
+        $user->name = $request->input('fullname');
+        $user->role = $request->input('roles');
+        $user->email = $request->input('email');
+        // $user->password = $request->input('password');
+        $user->password = $hash;
+        $user->save();
+        
+        return redirect('home/admins')->with('success','Update Successful!');
     }
 
     /**

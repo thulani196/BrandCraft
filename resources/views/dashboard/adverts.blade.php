@@ -24,7 +24,19 @@
                                     <td>{{ $advert->description }}</td>
                                     <td class="center-align">
                                         <a href="adverts/{{$advert->id}}/edit"><i class="fa fa-wrench" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-trash-o"></i></a>
+                                        <div>
+                                            
+                                            {{--  {!! Form::open(['action'=>['AdvertController@destroy',$advert->id], 'method'=>'POST']) !!}
+
+                                                
+                                                {!! Form::hidden('_method', 'DELETE') !!}
+                                                {{Form::submit('Delete',['class' => 'fa fa-trash-o'])}}
+                                                
+                                            
+                                            {!! Form::close() !!}
+                                              --}}
+                                            
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
