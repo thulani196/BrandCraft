@@ -9,7 +9,8 @@
                         <th>Name</th>
                         <th>Email Address</th>
                         <th>Role</th>
-                        <th>Actions</th>
+                        <th></th>
+                        <th></th>
                     </thead>
                     <tbody>
                     @if(count($users) > 0)
@@ -28,8 +29,16 @@
                                     @endif
                                 </td>
                                 <td class="center-align">
-                                    <a href="admins/{{$user->id}}/edit"><i class="fa fa-edit"></i></a>
-                                    <a href=""><i class="fa fa-trash-o"></i></a>
+                                    <a href="admins/{{$user->id}}/edit" class="btn">Edit</a>
+                                    
+                                </td>
+                                <td>
+                                        {!! Form::open(['action'=>['AdminsController@destroy',$user->id], 'method'=>'POST']) !!}
+
+                                        {!! Form::hidden('_method', 'DELETE') !!}
+                                        {{Form::submit('Delete',['class' => 'btn btn-xs'])}}
+                                        
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                             

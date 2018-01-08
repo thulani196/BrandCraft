@@ -23,22 +23,18 @@ class AdminsController extends Controller
     |
     */
 
-    // use RegistersUsers;
-
-    // protected function validator(array $data)
-    // {
-    //     return Validator::make($data, [
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|string|email|max:255|unique:users',
-    //         'password' => 'required|string|min:6|confirmed',
-    //     ]);
-        
-    // }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         if(Auth::user()->role == 1) {
@@ -167,6 +163,8 @@ class AdminsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Users::find($id);
+        $user->delete();
+        return redirect('home/admins')->with("success","User successfully removed!");
     }
 }

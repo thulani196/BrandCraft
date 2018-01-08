@@ -7,6 +7,13 @@ use DB;
 use App\Requests;
 class HandleRequests extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+
     public function archiveRequest($id) {
         if(isset($id) && !empty($id)) {
             $sql = DB::table('requests')

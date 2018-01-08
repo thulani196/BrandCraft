@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Advert;
 class AdvertsController extends Controller
 {
@@ -14,7 +15,7 @@ class AdvertsController extends Controller
     public function index()
     {
         // $adverts = Advert::all();
-        $adverts = Advert::paginate(12);  
+        $adverts = Advert::orderBy('id','desc')->paginate(12);  
         return view('dashboard.adverts',['adverts' => $adverts]);
     }
 
@@ -132,6 +133,15 @@ class AdvertsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $advert = Advert::find($id);
+
+        if($advert->image != 'image.jpg'){
+            // Delete Image
+            Storage::delete("public/cover_images/".$advert->image);
+        }
+
+        $advert->delete();
+        return redirect('home/adverts')->with('success','Product Successfully Deleted');
+        
     }
 }

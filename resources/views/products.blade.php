@@ -2,9 +2,11 @@
 @section('content')
     <div class="container"><br><br>
         <div class="row">
+                <h3 class="center-align red-text text-darken-4">Our Products</h3>
             @if(count($adverts) > 0)
                 @foreach($adverts as $advert)
                     <div class="col l4 m4 s12">
+                        
                         <div class="card">
                             <div class="card-image">
                                 <img src="/storage/cover_images/{{$advert->image }}" height="230px" width="100%">

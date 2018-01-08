@@ -53,7 +53,7 @@
         <nav class="red darken-4">
         <div class="nav-wrapper   container" role="navigation">
                 <a id="logo-container" href="{{ url('/')}}" class="brand-logo white-text">
-                        <img class="" width="140px" height="80px" style="padding-top:10px;" src="{{ asset('images/logo.jpg') }}">
+                        <img class="" width="140px" height="50px" style="padding-top:px;" src="{{ asset('images/logo.jpg') }}">
                       </a>
             <ul class="right hide-on-med-and-down">
                 {{--  <li><a href="{{ url('/') }}">Home</a></li>  --}}
@@ -74,6 +74,17 @@
                     @if (Route::has('login'))
                             @auth
                                <li><a href="{{ url('/home') }}">Dashboard</a></li> 
+                               <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+                
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
                             @else
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 {{--  <li><a href="{{ route('register') }}">Register</a></li>  --}}

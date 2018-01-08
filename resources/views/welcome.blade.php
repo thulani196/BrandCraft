@@ -35,7 +35,7 @@
         <nav class="red darken-4 " role="navigation">
             <div class=" nav-wrapper container ">
                 <a id="logo-container" href="#" class="brand-logo white-text">
-                  <img class="" width="140px" height="80px" style="padding-top:10px;" src="{{ asset('images/logo.jpg') }}">
+                  <img class="" width="140px" height="50px" style="padding-top:10px;" src="{{ asset('images/logo.jpg') }}">
                 </a>
                 <ul class="right hide-on-med-and-down ">
                     <li><a class="white-text " href="{{ url('/products') }}">Products</a></li>
@@ -291,13 +291,13 @@
     <!-- Contact Details Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-          <h4 class="center" style="font-size:24px; color:rgb(250,10,10)">Contact us!</h4>
+          <h4 class="center red-text text-darken-4" ">Contact us!</h4>
           <p style="text-align:center">Location:16 prospect hill Kapumpe rd, off Yotamu Muleya rd</p>
-          <p style="text-align:center">Call us: <a href="tel:+260979568223" ><i class="fa fa-phone">+260 979 568 223</i></a></p>
-          <p style="text-align:center">Email us: <a href="mailto:brandcraft@gmail.com" ><i class="fa fa-email">Brandcraft@gmail.com</i></a></p>
+          <p style="text-align:center">Call us: <a href="tel:+260979568223" ><i class="fa fa-phone"> +260 979 568 223</i></a></p>
+          <p style="text-align:center">Email us: <a href="mailto:brandcraft@gmail.com" ><i class="fa fa-envelope-o" aria-hidden="true"> Brandcraft@gmail.com</i></a></p>
         </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Got It!</a>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
         </div>
     </div>
     

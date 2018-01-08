@@ -12,6 +12,9 @@ class RequestsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function index()
     {
         return view('requests');
