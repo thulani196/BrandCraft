@@ -130,7 +130,7 @@
 
         <div class="col l3 s12 m4">
             <div class="icon-block">
-              <h2 class="center brown-text"><i class="fa fa-industry" aria-hidden="true"></i></h2>
+              <h2 class="center brown-text"><i class="fa fa-car" aria-hidden="true"></i></h2>
               <h5 class="center red-text text-darken-4">Signage and Vehicle Branding</h5>
   
               <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
@@ -171,14 +171,12 @@
           <div class="col l4 s12 m7">
             <div class="card z-depth-4">
               <div class="card-image">
-                <img src="{{ asset('images/background1.jpg') }}" height="200px" width="100%">
-                <span class="card-title">Card Title</span>
+                <img src="{{ asset('images/portfolio.jpg') }}" height="200px" width="100%">
+                <span class="card-title">Builders Warehouse</span>
               </div>
 
               <div class="card-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque 
-                      id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna 
-                      fermentum ac. </p>
+                  <p>Installation of a pylon for Builders Warehouse in Kitwe. </p>
               </div>
             </div>
           </div>
@@ -186,14 +184,12 @@
           <div class="col l4 s12 m7">
               <div class="card z-depth-4">
                 <div class="card-image">
-                  <img src="{{ asset('images/background2.jpg') }}" height="200px" width="100%">
-                  <span class="card-title">Card Title</span>
+                  <img src="{{ asset('images/portfolio1.jpg') }}" height="200px" width="100%">
+                  <span class="card-title">Creation Furnitures</span>
                 </div>
   
                 <div class="card-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque 
-                        id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna 
-                        fermentum ac. </p>
+                    <p>Installation of Signs for Cration Furnitures in Lusaka.</p>
                 </div>
               </div>
             </div>
@@ -201,14 +197,12 @@
             <div class="col l4 s12 m7">
                 <div class="card z-depth-4">
                   <div class="card-image">
-                    <img src="{{ asset('images/background3.jpg') }}" height="200px" width="100%">
-                    <span class="card-title">Card Title</span>
+                    <img src="{{ asset('images/portfolio 2.jpg') }}" height="200px" width="100%">
+                    <span class="card-title">Mukuba Mall</span>
                   </div>
     
                   <div class="card-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque 
-                      id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna 
-                      fermentum ac. </p>
+                    <p>Installation of Signage at Mukuba Mall for different brands.</p>
                   </div>
                 </div>
               </div>
@@ -242,15 +236,11 @@
     <div class="section card-panel white">
       <h5 class="center-align red-text text-darken-4 ">About Us</h5>
       <div class="row">
-        <p class="light justify-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id 
-          nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. 
-          Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. 
-          Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend 
-          sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi 
-          massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim 
-          mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus 
-          et ultrices posuere cubilia Curae;
+        <p class="light justify-text" style="text-align:center">
+         BrandCraft is an African signage company. It is a sister company to BrandSigns.
+         BrandCraft is currently based in Zambia, having it's headquarters in Lusaka. 
+         It was founded in 2017 by Mr. Joseph Kangwa. BrandCraft officers the following 
+         products and services Signage Installation|Branding|Signage and Vehicle Branding|Scarfold Hire.
         </p>
       </div>
     </div>

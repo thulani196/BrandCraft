@@ -13,26 +13,27 @@
                 </div>
 
                 <div class="col l6 m6 s12 input-field">
-                    <input type="text" name="organization" class="validate">
-                    <label for="org_name">Organization Name:</label>
+                    <input type="text" name="organization"  class="validate">
+                    <label for="org_name">Organization Name:<small>(Specify if personal)</small></label>
                 </div>
 
                 <div class="col l6 m6 s12 input-field">
                     <input type="text" name="personal_number" class="validate">
-                    <label for="personal_number">Personal Number:</label>
+                    <label for="personal_number">Cell Number:</label>
                 </div>
 
                 <div class="col l6 m6 s12 input-field">
                     <input type="text" name="org_number" class="validate">
-                    <label for="org_number">Organization Number:</label>
+                    <label for="org_number">Tel. Number:</label>
                 </div>
 
                 <div class="col l6 s12 m6 input-field">
                     <select name="service">
                       <option value="" disabled selected>Choose your option</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
+                      <option value="Scaffold Hire">Scaffold Hire</option>
+                      <option value="Branding">Branding</option>
+                      <option value="Signage Installation">Signage Installation</option>
+                      <option value="Signage and Vehicle Branding">Signage and Vehicle Branding</option>
                     </select>
                     <label>Materialize Select</label>
                   </div>

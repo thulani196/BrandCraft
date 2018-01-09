@@ -24,10 +24,10 @@
                                     <td>{{$x}}</td>
                                     <td><img src="/storage/cover_images/{{$advert->image }}" width="60px" height="25px"></td>
                                     <td>{{ $advert->title }}</td>
-                                    <td>{{ $advert->description }}</td>
+                                    <td>{{ substr($advert->description,0,45) }}</td>
                                     <td class="center-align">
                                         {{--  <a href="adverts/{{$advert->id}}/edit"><i class="fa fa-wrench" aria-hidden="true"></i></a>  --}}
-                                        <a href="" class="btn">Edit</a>
+                                        <a href="adverts/{{$advert->id}}/edit" class="btn">Edit</a>
                                     </td>
                                     <td>
                                         <div>
